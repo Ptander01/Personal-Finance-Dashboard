@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+
+# Your real data — never commit it.
+public/data.json

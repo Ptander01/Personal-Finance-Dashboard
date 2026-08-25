@@ -1,0 +1,20 @@
+{
+  "name": "personal-finance-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "data": "python3 scripts/generate-sample-data.py"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.1",
+    "d3": "^7.9.0",
+    "d3-sankey": "^0.12.3"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "description": "A personal finance dashboard that reads your own data.json \u2014 ships with synthetic sample data."
+}
