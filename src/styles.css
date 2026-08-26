@@ -144,3 +144,34 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 ::-webkit-scrollbar{width:3px;height:3px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.07);border-radius:2px;}
+
+/* ── Demo-data banner ────────────────────────────────────────────────
+   Shown only when the app fell back to data.sample.json. It exists so a
+   viewer of the hosted demo is never left guessing whether the figures
+   belong to a real household. */
+#sample-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 9999;
+  max-width: min(760px, calc(100vw - 32px));
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: rgba(18, 22, 30, 0.94);
+  border: 1px solid rgba(126, 207, 178, 0.42);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+  color: #b9c6d4;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+#sample-banner strong { color: #7ecfb2; }
+#sample-banner code {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+@media (max-width: 640px) { #sample-banner { font-size: 11px; padding: 8px 12px; } }

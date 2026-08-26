@@ -202,9 +202,10 @@ for ys, v in tx_by_year.items():
     assert abs(v - by_year_total[ys]) < 5.0, f"{ys}: transactions {v:.2f} != total {by_year_total[ys]}"
 
 os.makedirs("public", exist_ok=True)
-with open("public/data.json", "w") as f:
-    json.dump(data, f)
-print(f"public/data.json written — {len(transactions):,} transactions, "
+for out in ("public/data.json", "public/data.sample.json"):
+    with open(out, "w") as f:
+        json.dump(data, f)
+print(f"public/data.json + data.sample.json written — {len(transactions):,} transactions, "
       f"{len(monthly_total)} months, {len(YEARS)} years, "
       f"{os.path.getsize('public/data.json')//1024} KB")
 print("all consistency checks passed")
