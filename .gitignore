@@ -4,3 +4,4 @@ dist/
 
 # Your real data — never commit it.
 public/data.json
+.vercel

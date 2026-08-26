@@ -1,5 +1,6 @@
 import { createApp } from './app.js'
 import { config } from './config.js'
+import { inject } from '@vercel/analytics'
 
 /**
  * Two-file loader, so the dashboard shows something the moment you clone it.
@@ -41,6 +42,10 @@ function sampleBanner() {
     `Drop your own <code>public/data.json</code> in to replace it.`
   document.body.appendChild(el)
 }
+
+// Vercel Web Analytics. Called before the first load so the initial
+// pageview is recorded; it patches history.pushState for anything after.
+inject()
 
 async function init() {
   const own = await load('/data.json')
